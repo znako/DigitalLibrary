@@ -1,0 +1,161 @@
+* {
+    font-family: 'Montserrat';
+    box-sizing: border-box;
+}
+html{
+    margin: 0;
+    padding: 0;
+}
+body{
+    margin: 0;
+    padding: 0;
+    color: wheat;
+    background-color: #000000;
+}
+a, a:visited, a:active{
+    text-decoration: none;
+    color: inherit;
+}
+a:hover{
+    color:rgb(246, 231, 203);
+}
+div.header{
+    display: flex;
+    align-items: center;
+    position: static;
+    padding-left: 3%;
+    width: 100%;
+    height: 80px;
+    background-color: rgba(0, 0, 0, 0.958);
+    border-bottom: 2px solid wheat;
+
+}
+div.header h1{
+    position: relative;
+    padding-right: 12px;
+    font-size: 30pt;
+    border-right: 1px wheat solid;
+}
+div.header h2{
+    position: relative;
+    left: 12px;
+    font-size: 22pt;
+}
+div.header a:hover{
+    color:wheat;
+}
+div.central{
+    position: absolute;
+    width: 100%;
+    height: 80%;
+    display: flex;
+    margin-top: 50px;
+    flex-direction: column;
+    align-items: center;
+}
+div.central h1{
+    font-style: italic;
+    text-decoration-line: underline;
+}
+div.private, div.free, div.empty, div.notEmpty{
+    position: relative;
+    width: 768px;
+    margin-top: 80px;
+    padding: 50px;
+    padding-bottom: 35px;
+    border: 1px solid wheat;
+    border-radius: 5px;
+    background-color: rgba(34, 34, 34, 0.958);
+    font-size: 18pt;
+}
+div.empty span{
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+div.notEmpty span.h{
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    font-size: 22pt;
+    font-weight: bold;
+}
+span.books{
+    font-style: italic;
+    color: rgb(230, 211, 177);
+}
+div.private span{
+    display: block;
+    margin-bottom: 10px;
+}
+span.owner{
+    font-style: italic;
+}
+div.buttons{
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+div.buttonsFree{
+    margin-left: 200px;
+    width: 80%;
+    margin-top: 80px;
+    display: flex;
+    justify-self: center;
+    justify-content: space-around;
+}
+input{
+    width: 170px;
+    height: 50px;
+    
+    border: 1px solid wheat;
+    border-radius: 5px;
+    background-color: rgb(31, 31, 31);
+    color: rgb(240, 226, 200);
+    font-size: 12pt;
+    color: wheat;
+    transition: all 0.15s 0s linear;
+}
+input:hover{
+    cursor: pointer;
+    background-color: rgba(22, 22, 22, 0.958);
+    box-shadow: 0px 0px 7px 0px rgba(154, 154, 154, 0.8);
+}
+input.delete{
+    border-radius: 0px;
+}
+input.makeFree:hover{
+    box-shadow: 0px 0px 7px 0px rgba(0, 157, 255, 0.8);
+}
+input.delete:hover{
+    box-shadow: 0px 0px 7px 0px rgba(255, 0, 0, 0.8);
+}
+div.free span{
+    display: block;
+    margin-bottom: 20px;
+}
+input.take{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    margin-left: 50px;
+    margin-bottom: 35px;
+}
+input.take:hover{
+    box-shadow: 0px 0px 7px 0px rgba(0, 157, 255, 0.8);
+}
+select{
+    width: 100px;
+    height: 25px;
+    background-color: rgb(31, 31, 31);;
+    color: wheat;
+
+}
+option{
+    width: 100px;
+    height: 25px;
+    background-color: rgb(31, 31, 31);
+    font-style: italic;
+    color: wheat;
+}

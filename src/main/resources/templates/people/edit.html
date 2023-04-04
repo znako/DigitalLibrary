@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+          rel="stylesheet">
+    <meta charset="utf-8">
+    <title>Изменить участника</title>
+    <link rel="stylesheet" href="../../static/css/newNEdit.css" th:href="@{/css/newNEdit.css}">
+    <link rel="shortcut icon" href="../../static/foto/favicon.ico" th:href="@{/foto/favicon.ico}" type="image/x-icon">
+
+<body>
+<div class="header">
+    <a href="../"><H1> DL </H1></a>
+    <a href="../"><H2> Digital Library </H2></a>
+</div>
+<div class="container">
+    <div class="form">
+        <form th:method="PATCH" th:action="@{/people/{id}(id=${person.getPerson_id()})}" th:object="${person}">
+            <label for="name">Введите имя </label>
+            <br>
+            <input type="text" th:field="*{name}" id="name" placeholder="Анатолий"/>
+            <div style="color:red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
+            <br/>
+            <label for="age">Введите возраст </label>
+            <br>
+            <input type="text" th:field="*{age}" id="age" placeholder="13"/>
+            <div style="color:red" th:if="${#fields.hasErrors('age')}" th:errors="*{age}"></div>
+            <br/>
+            <center><input type="submit" class="add" value="Изменить"/></center>
+        </form>
+    </div>
+</div>
+</body>
+</html>

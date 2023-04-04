@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <meta charset="utf-8">
+    <title>Информация об участнике</title>
+    <link rel="stylesheet" href="../../static/css/show.css" th:href="@{/css/show.css}">
+    <link rel="shortcut icon" href="../../static/foto/favicon.ico" th:href="@{/foto/favicon.ico}" type="image/x-icon">
+
+<body>
+    <div class="header">
+        <a href="../"> <H1> DL </H1> </a>
+        <a href="../"> <H2> Digital Library </H2> </a>
+    </div>
+    <div class="central">
+        <h1 th:text="${person.getName() + ', ' + person.getAge()}">
+            VALUE
+        </h1>
+
+        <div class="empty" th:if="${books.isEmpty()}">
+            <span>Читатель пока не взял ни одной книги </span>
+            <div class="buttons">
+                <form th:method="GET" th:action="@{/people/{id}/edit(id=${person.getPerson_id()})}">
+                    <input type="submit" value="Редактировать"/>
+                </form>
+        
+                <form th:method="DELETE" th:action="@{/people/{id}(id=${person.getPerson_id()})}">
+                    <input type="submit" class="delete" value="Удалить"/>
+                </form>
+            </div>
+        </div>
+
+        <div class="notEmpty" th:if="${!books.isEmpty()}">
+
+            <span class="h"> Книги </span>
+            <br/>
+            <table th:each="book : ${books}">
+                <tr>
+                    <td>
+                        &nbsp&nbsp -
+                        <span class="books" th:text="${book.getTitle() + ', ' + book.getAuthor() + ', ' + book.getYear()}">
+                            book
+                        </span>
+                    </td>
+            </table>
+
+            <div class="buttons">
+                <form th:method="GET" th:action="@{/people/{id}/edit(id=${person.getPerson_id()})}">
+                    <input type="submit" value="Редактировать"/>
+                </form>
+        
+                <form th:method="DELETE" th:action="@{/people/{id}(id=${person.getPerson_id()})}">
+                    <input type="submit" class="delete" value="Удалить"/>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

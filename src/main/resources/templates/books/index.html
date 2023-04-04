@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <meta charset="utf-8">
+    <title>Список книг</title>
+    <link rel="stylesheet" href="../../static/css/listBooksNPeople.css" th:href="@{/css/listBooksNPeople.css}">
+    <link rel="shortcut icon" href="../../static/foto/favicon.ico" th:href="@{/foto/favicon.ico}" type="image/x-icon">
+
+</head>
+<body>
+    <div class="header">
+        <a href="../"> <H1> DL </H1> </a>
+        <a href="../"> <H2> Digital Library </H2> </a>
+    </div>
+    <div class="central"> 
+        <div class="listBooks" th:each="book : ${books}">
+            <a class="list" th:href="@{/books/{id}(id=${book.getBook_id()})}"
+            th:text="${book.getTitle() + ', ' + book.getAuthor() + ', ' + book.getYear()}">
+                <span class="clear">Список книг пуст</span>
+            </a>
+        </div>  
+
+        <a href="/books/new"><div class="addNew">Добавить книгу</div></a>
+    </div>
+</body>
+</html>

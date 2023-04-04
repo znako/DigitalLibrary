@@ -11,6 +11,9 @@
 
 ## Пример работы приложения
 
+### <u> Видео презентация проекта </u>
+<a href="https://www.youtube.com/watch?v=JTma8wkUavw&ab_channel=%D0%90%D1%80%D1%81%D0%B5%D0%BD%D0%AF%D1%80%D1%83%D0%BB%D0%BB%D0%B8%D0%BD"> Youtube </a>
+
 ### Начальная страница
 
 ![img_1.png](images/img_1.png)
